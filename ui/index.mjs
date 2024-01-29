@@ -12,10 +12,10 @@ class Application {
 
 (async function main() {
   const path = globalThis.window ? "browser" : "console";
-  const { default: viewFactory } = await import(
+  const { default: ViewFactory } = await import(
     `./../platforms/${path}/index.mjs`
   );
-  const app = new Application(new viewFactory());
+  const app = new Application(new ViewFactory());
 
   app.initialize(database);
 })();
